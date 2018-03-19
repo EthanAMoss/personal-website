@@ -12,7 +12,7 @@ def home_page():
 
 @app.route('/about')
 def about_page():
-    return "About Page: Coming Soon!"
+    return render_template('about.jinja2.html')
 
 
 @app.route('/blog')

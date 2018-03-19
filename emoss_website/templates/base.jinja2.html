@@ -25,10 +25,14 @@
     <body class="{{ body_class }}">
 
     {% block body %}
-
+        
         {% block header %}
+        <div class="container" id="site-header"></div>
+        {% endblock %}
+
+        {% block navbar %}
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
-            <a class="navbar-brand sticky-hide invisible" href="{{ url_for('home_page') }}">Ethan Moss</a>
+            <a class="navbar-brand sticky-hide {{ 'invisible' if request.path == '/' }}" href="{{ url_for('home_page') }}">Ethan Moss</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="nav navbar-nav abs-center-x">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about_page') }}">About</a>
+                        <a class="nav-link {{ 'active' if request.path == '/about' }}" href="{{ url_for('about_page') }}">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('blog_page') }}">Blog</a>
@@ -50,7 +54,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav ml-auto social-links justify-content-center">
-                    <li class="nav-item sticky-hide invisible">
+                    <li class="nav-item sticky-hide {{ 'invisible' if request.path == '/' }}">
                         <a class="fa fa-linkedin nav-link" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
                         <a class="fa fa-github nav-link" href="https://github.com/EthanAMoss" title="GitHub"></a>
                         <a class="fa fa-envelope nav-link" href="{{ url_for('contact_page') }}" title="Email"></a>
@@ -58,7 +62,6 @@
                 </ul>
             </div>
         </nav> <!-- /.navbar -->
-
         {% endblock %}
 
         <div class="container main_body">
@@ -76,19 +79,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script>
-            $(function() {
-                $(window).scroll(function() {
-                    if($(window).scrollTop() >= 350) {  
-                        $('.sticky-hide').removeClass('invisible');
-                        $('.sticky-hide').fadeIn('slow');
-                    }else{
-                        $('.sticky-hide').fadeOut('slow');
-                        $('.sticky-hide').addClass('invisible');
-                    }
-                });
-            });
-        </script>
     {% block extra_js %}
     {% endblock %}
     </body>
