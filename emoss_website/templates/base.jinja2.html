@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Ethan Moss{% endblock %}</title>
+
+{# {% import 'macros.jinja2.html' as macros %} #}
+
+{# Set the class for the body tag #}
+{% set body_class = request.endpoint %}
+
+{# Add a class if we are dev mode #}
+{% set body_class = body_class ~ " developer_mode" if config.DEVELOPER_MODE else body_class %}
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/emoss_website.css') }}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        {% block extra_css %}
+        {% endblock %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body class="{{ body_class }}">
+
+    {% block body %}
+
+        {% block header %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('home_page') }}">Ethan Moss</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="nav navbar-nav abs-center-x">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about_page') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('blog_page') }}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('resume_page') }}">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact_page') }}">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Social</a>
+                    </li>                
+                </ul>
+            </div>
+        </nav> <!-- /.navbar -->
+
+        {% endblock %}
+
+        <div class="container main_body">
+
+        {% block main_body %}
+            {# {{ macros.render_flash() }} #}
+        {% endblock %}
+        </div> <!-- /.container.main_body -->
+
+    {% endblock %}
+
+
+        <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    {% block extra_js %}
+    {% endblock %}
+    </body>
+</html>
+
