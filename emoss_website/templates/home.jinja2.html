@@ -120,10 +120,11 @@
 {% block extra_js %}
 <script>
 $(window).scroll(function() {
-    if($(window).scrollTop() >= $('#site-header').height()) {
-        $('.sticky-hide').removeClass('invisible').fadeIn('slow');
-    } else  {
-        $('.sticky-hide').fadeTo('slow', 0);
+    if($(window).scrollTop() > $('#site-header').height()) {
+        $('.sticky-hide').removeClass('invisible');
+        $('.sticky-hide').stop().fadeTo('fast', 1);
+    } else {
+        $('.sticky-hide').stop().fadeTo('fast', 0);
     }
 });
 </script>
