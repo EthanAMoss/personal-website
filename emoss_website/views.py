@@ -15,7 +15,6 @@ def home_page():
 
 @app.route('/about')
 def about_page():
-
     return render_template('about.jinja2.html',
                            my_age=calculate_age(date(1996, 4, 25)))
 
