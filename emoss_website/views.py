@@ -1,4 +1,7 @@
 from emoss_website import app
+from datetime import date
+
+from .helper import calculate_age
 
 import flask
 
@@ -12,19 +15,21 @@ def home_page():
 
 @app.route('/about')
 def about_page():
-    return render_template('about.jinja2.html')
+
+    return render_template('about.jinja2.html',
+                           my_age=calculate_age(date(1996, 4, 25)))
 
 
 @app.route('/blog')
 def blog_page():
-    return "Blog: Coming Soon!"
+    return render_template('blog.jinja2.html')
 
 
 @app.route('/resume')
 def resume_page():
-    return "Resume: Coming Soon!"
+    return render_template('resume.jinja2.html')
 
 
 @app.route('/contact')
 def contact_page():
-    return "Contact Page: Coming Soon!"
+    return render_template('contact.jinja2.html')

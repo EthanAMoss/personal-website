@@ -43,17 +43,17 @@
                         <a class="nav-link {{ 'active' if request.path == '/about' }}" href="{{ url_for('about_page') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('blog_page') }}">Blog</a>
+                        <a class="nav-link {{ 'active' if request.path == '/blog' }}" href="{{ url_for('blog_page') }}">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('resume_page') }}">Resume</a>
+                        <a class="nav-link {{ 'active' if request.path == '/resume' }}" href="{{ url_for('resume_page') }}">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact_page') }}">Contact</a>
+                        <a class="nav-link {{ 'active' if request.path == '/contact' }}" href="{{ url_for('contact_page') }}">Contact</a>
                     </li>
                 </ul>
 
-                <ul class="nav navbar-nav ml-auto social-links justify-content-center">
+                <ul class="nav navbar-nav ml-auto social-links">
                     <li class="nav-item sticky-hide {{ 'invisible' if request.path == '/' }}">
                         <a class="fa fa-linkedin nav-link" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
                         <a class="fa fa-github nav-link" href="https://github.com/EthanAMoss" title="GitHub"></a>
