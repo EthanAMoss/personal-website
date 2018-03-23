@@ -8,101 +8,25 @@
 
 
     {% block main_body %}
-
         <div class="container">
-        Hey there! I'm a soon-to-be graduate of George Fox University with a Bachelor's of Science in Computer Science. Not only that, but I have over 3 years of experience working with George Fox's Data Analytics department, making webapps that work a lot like this one. 
+            <br />
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Contact Me</h2>
+                    <form action="{{ url_for('contact_page') }}" method="POST">
+                    {% for field in contact_form %}
+                        <div class="form-group">
+                        {% if field.widget.input_type != "hidden" %}
+                        {{ field.label }}
+                        {% endif %}
+                        {{ field(class="form-control") }}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-<br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
     {% endblock %}
 
 {% endblock %}

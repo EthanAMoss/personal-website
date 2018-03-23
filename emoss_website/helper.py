@@ -1,5 +1,6 @@
 from datetime import date
 
+
 def calculate_age(birthday):
     """Calculates the current age (in years) of the person with the given birthday"""
     today = date.today()
