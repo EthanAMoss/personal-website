@@ -1,4 +1,10 @@
+from emoss_website import mail
+from flask_mail import Message
+
+from .config import EMAIL_RECIPIENT, DEFAULT_EMAIL_SUBJECT
+
 from datetime import date
+
 
 
 def calculate_age(birthday):
@@ -11,3 +17,19 @@ def calculate_age(birthday):
         age = age - 1
 
     return age
+
+
+def send_email(sender_name, sender_email, subject, body):
+    # If no given subject, set to default
+    if subject is None:
+        subject = DEFAULT_EMAIL_SUBJECT
+
+    # Set up message
+    msg = Message(subject=subject,
+                  recipients=[EMAIL_RECIPIENT],
+                  body=body,
+                  sender=(sender_name, sender_email),
+                  reply_to=sender_email)
+
+    # Send message
+    mail.send(msg)
