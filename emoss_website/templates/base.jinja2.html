@@ -3,7 +3,7 @@
     <head>
         <title>{% block title %}Ethan Moss{% endblock %}</title>
 
-{# {% import 'macros.jinja2.html' as macros %} #}
+{% import 'macros.jinja2.html' as macros %}
 
 {# Set the class for the body tag #}
 {% set body_class = request.endpoint %}
@@ -67,7 +67,7 @@
         <div class="container main_body">
 
         {% block main_body %}
-            {# {{ macros.render_flash() }} #}
+            {{ macros.render_flash() }}
         {% endblock %}
         </div> <!-- /.container.main_body -->
 
