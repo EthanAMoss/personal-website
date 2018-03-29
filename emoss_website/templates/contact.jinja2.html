@@ -15,13 +15,27 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">Contact Me</h2>
-                    <form action="{{ url_for('contact_page') }}" method="POST">
+                    <form class="needs-validation" action="{{ url_for('contact_page') }}" method="POST">
                     {% for field in contact_form %}
-                        <div class="form-group">
+                        <div class="form-group {% if field.flags.required %}required{% endif %} {% if field.errors %}is-invalid{% endif %}">
+                        {# Display the field label, if the field isn't hidden #}
                         {% if field.widget.input_type != "hidden" %}
-                        {{ field.label }}
+                        {{ field.label(class="form-control-label") }}
                         {% endif %}
+                        
+                        {# Display the field, in error form, if applicable#}
+                        {% if field.errors %}
+                        {{ field(class="form-control is-invalid") }}
+                        {% else %}
                         {{ field(class="form-control") }}
+                        {% endif %}
+                        
+                        {# If there's errors, show an error message #}
+                        {% if field.errors %}
+                        {% for error in field.errors %}
+                        <div class="invalid-feedback">{{ error }}</div>                        
+                        {% endfor %}
+                        {% endif %}    
                         </div>
                     {% endfor %}
                     <button type="submit" class="btn btn-primary">Submit</button>
