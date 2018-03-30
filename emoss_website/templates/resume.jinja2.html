@@ -8,102 +8,36 @@
 
 
     {% block main_body %}
-
+        {{ super() }}        
+        
         <div class="container">
-        <a href="https://www.dropbox.com/s/ekrcxj5550lc4xs/EthanMossResume.pdf?raw=1" class="btn btn-primary">Download My Resume</a>
-        <p>Hey there! I'm a soon-to-be graduate of George Fox University with a Bachelor's of Science in Computer Science. Not only that, but I have over 3 years of experience working with George Fox's Data Analytics department, making webapps that work a lot like this one.</p>
+            <div class="text-center">            
+                <a href="https://www.dropbox.com/s/ekrcxj5550lc4xs/EthanMossResume.pdf?raw=1" class="btn btn-primary"><span class="fa fa-dropbox"></span> Download My Resume</a>
+            </div>
+
+            <br />
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text text-center">Be sure to check out the resume above! Here, I'll ellaborate a bit on my experience. If you have any questions, please do not hesitate to <a href="{{ url_for('contact_page') }}">Contact Me</a>!</p>
+                </div>          
+            </div>
+            
+            <br />
+            <div class="card">
+                <img class="card-img-top" src="/static/images/gfu.jpg" alt="George Fox University">
+                <div class="card-body">
+                    <h5 class="card-title">My Internship w/George Fox Univerity Data Analytics</h5>
+                    <p class="card-subtitle mb-2 text-muted">October 2014 - Present</p>
+                    <p class="card-text">This internship has provided me with the bulk of my current development experience outside of the classroom. I joined up with Data Analytics only a month and a half after I began studying at George Fox, so I have had quite a history with them. This long tenure with Data Analytics has provided me quite a bit of growth and experience, though not so much in the actual field of data analytics. I started out doing mere data entry, but now I'm a full-fleged Software Engineer trusted enough to build webapps and deploy them without much oversight. During the school year, I would work 10 hours a week as a work-study position, while the summers would see the postion become a full-time, 40-hour gig.</p>
+                    <p class="card-text">I'd say the coolest thing about this internship is how much I'm now trusted to do. I've been given sudo access on both test and production servers so the can deploy my webapps on my own. I'm even allowed to work remotely, especially during school breaks, allowing me to continue working on my projects while I'm not on campus. As I'm writing this, just this morning I deployed some changes off to the servers while working in my own basement, some 200+ miles away. I'm really thankful that GFU Data Analytics have given me this opportunity to do some awesome things.</p>
+                    <p class="card-text">As for the actual projects I've worked on, many of my projects have been the aforementioned webapps (using Flask and Bootstrap like this website), which serve as tools assisting various departments of the university. More often than not, my webapp provides an easy way for a user to view and manipulate data, so that they don't have to learn how to use SQL in order to change or view the data they need to. Thus, having the webapp communicate with a database is a pretty common feature with my webapps, though I have implemented other features such as search functions, talking with issue trackers, pulling data from a Wiki, and sending emails automatically. These webapps are generally deployed using <a href="https://www.docker.com/">Docker</a>, which I have found to be this really great tool for testing and getting these apps up and running quickly.</p>
+                    <p class="card-text">Outside of webapps, most of my other projects still have still generally used Python, such as the package I wrote to work with the API of a content management system the school uses for its main website. I've also done my share of work on databases, though that is often in conjunction with a webapp, some of it was stand-alone stuff, especially earlier on.</p>
+                    <small class="card-text text-muted"><a href="https://commons.wikimedia.org/wiki/File:George_fox_university.jpg">Photo</a> by George Fox University, used under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> / Cropped from original</small>                
+                </div>
+            </div>
+            
+            <br />
         </div>
-
-<br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br /><br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
-<br />
-        <br />
-        <br />
     {% endblock %}
 
 {% endblock %}
