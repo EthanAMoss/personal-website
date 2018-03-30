@@ -5,3 +5,5 @@ Flask-Mail
 Jinja2
 
 python-dateutil
+
+gunicorn
