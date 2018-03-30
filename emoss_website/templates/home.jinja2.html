@@ -4,15 +4,20 @@
     
     {% block header %}
         <div class="container" id="site-header">
-            <div class="text-center mx-auto">
-                <h1 class="card-title">Ethan Andrew Moss</h1>
-                <h4 class="card-subtitle text-muted">Software Developer</h4>
-                <p class="social-links">
-                    <a class="fa fa-linkedin nav-link text-muted" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
-                    <a class="fa fa-github nav-link text-muted" href="https://github.com/EthanAMoss" title="GitHub"></a>
-                    <a class="fa fa-envelope nav-link text-muted" href="{{ url_for('contact_page') }}" title="Email"></a>
-                </p>
+            <br />
+            <div class="row justify-content-center">
+                <img src="/static/images/face.png" alt="Ethan" class="rounded-circle my-auto mr-sm-4" width="150">
+                <div class="text-center mt-3">
+                    <h1 class="card-title">Ethan Andrew Moss</h1>
+                    <h4 class="card-subtitle text-muted">Software Developer</h4>
+                    <p class="social-links">
+                        <a class="fa fa-linkedin nav-link text-muted" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
+                        <a class="fa fa-github nav-link text-muted" href="https://github.com/EthanAMoss" title="GitHub"></a>
+                        <a class="fa fa-envelope nav-link text-muted" href="{{ url_for('contact_page') }}" title="Email"></a>
+                    </p>
+                </div>
             </div>
+            <br />
         </div>
     {% endblock %}
 
