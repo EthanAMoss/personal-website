@@ -10,7 +10,24 @@
     {% block main_body %}
 
         <div class="container">
-        Hey there! I'm a soon-to-be graduate of George Fox University with a Bachelor's of Science in Computer Science. Not only that, but I have over 3 years of experience working with George Fox's Data Analytics department, making webapps that work a lot like this one. 
+            <br />
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Here's a Blog!</h2>
+                    <p class="card-text">This here blog is mostly just to show that I can make a webapp pull from a database, which in this case is a little <a href="https://www.sqlite.org/index.html">SQLite</a> instance.</p>
+                </div>
+            </div>
+
+            {% for id, title, author, posted_on, body in posts %}
+            <br />
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">{{ title }}</h3>
+                    <p class="card-text"><small class="text-muted">Posted by {{ author }} on {{ posted_on }}</small></p>
+                    <p class="card-text">{{ body }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
     {% endblock %}

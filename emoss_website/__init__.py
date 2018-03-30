@@ -7,6 +7,9 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object('emoss_website.config')
 
+# Connect to blog database
+blog_db = SQLAlchemy(app)
+
 # Initialize mail sender
 mail = Mail(app)
 

@@ -1,7 +1,7 @@
 from emoss_website import app
 from datetime import date
 
-from .helper import calculate_age, send_email
+from .helper import calculate_age, send_email, get_all_blog_posts
 from .forms import ContactForm
 
 import flask
@@ -22,7 +22,11 @@ def about_page():
 
 @app.route('/blog')
 def blog_page():
-    return render_template('blog.jinja2.html')
+    # Get all the blog posts
+    posts = get_all_blog_posts()
+
+    return render_template('blog.jinja2.html',
+                           posts=posts)
 
 
 @app.route('/resume')
