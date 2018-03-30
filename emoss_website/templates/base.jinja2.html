@@ -31,7 +31,6 @@
         {% endblock %}
 
         {% block navbar %}
-        <div>
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
             <a class="navbar-brand sticky-hide {{ 'invisible' if request.path == '/' }}" href="{{ url_for('home_page') }}">Ethan Moss</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,8 +55,8 @@
 
                 <ul class="nav navbar-nav ml-auto social-links">
                     <li class="nav-item sticky-hide {{ 'invisible' if request.path == '/' }}">
-                        <a class="fa fa-linkedin nav-link" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
-                        <a class="fa fa-github nav-link" href="https://github.com/EthanAMoss" title="GitHub"></a>
+                        <a class="fa fa-linkedin nav-link" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" target="_blank" title="LinkedIn"></a>
+                        <a class="fa fa-github nav-link" href="https://github.com/EthanAMoss" target="_blank" title="GitHub"></a>
                         <a class="fa fa-envelope nav-link" href="{{ url_for('contact_page') }}" title="Email"></a>
                     </li>
                 </ul>
@@ -73,6 +72,12 @@
             <br />
         {% endblock %}
         </div> <!-- /.container.main_body -->
+
+        {% block footer %}
+        <footer class="navbar footer static-bottom navbar-light bg-light">
+            <div class="my-auto mx-auto text-muted"><small>&copy; 2018 Ethan Andrew Moss</small></div>
+        </footer>
+        {% endblock %}
 
     {% endblock %}
 

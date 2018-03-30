@@ -11,8 +11,8 @@
                     <h1 class="card-title">Ethan Andrew Moss</h1>
                     <h4 class="card-subtitle text-muted">Software Developer</h4>
                     <p class="social-links">
-                        <a class="fa fa-linkedin nav-link text-muted" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" title="LinkedIn"></a>
-                        <a class="fa fa-github nav-link text-muted" href="https://github.com/EthanAMoss" title="GitHub"></a>
+                        <a class="fa fa-linkedin nav-link text-muted" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" target="_blank" title="LinkedIn"></a>
+                        <a class="fa fa-github nav-link text-muted" href="https://github.com/EthanAMoss" target="_blank" title="GitHub"></a>
                         <a class="fa fa-envelope nav-link text-muted" href="{{ url_for('contact_page') }}" title="Email"></a>
                     </p>
                 </div>
@@ -31,8 +31,49 @@
         {{ super() }}
 
         <div class="container">
-        Hey there! I'm a soon-to-be graduate of George Fox University with a Bachelor's of Science in Computer Science.
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card mt-3">
+                        <div class="card-body">                
+                            <h2 class="card-title">Hey there!</h2> 
+                            <p class="card-text">I'm a soon-to-be graduate of George Fox University with a Bachelor's of Science in Computer Science. I have over 3 years of development experience under my belt, and I'm ready and willing to take on new challenges. This very website is a little demonstration of some of the skills I've developed, so feel free to take a look around!</p>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h2 class="card-title">My Work</h2>
+                            <p class="card-text">If you'd like to see what I can bring to your organization, why not check out some of my previous projects? This very website and more are hosted over on my <a target="_blank" href="https://github.com/EthanAMoss">GitHub</a>. I'll admit that there's isn't too much there yet, but what is there is a good introduction on the things I have learned in my time in development. You can also check out my <a href="{{ url_for('resume_page') }}">Resume</a> page for more detail on my past work experience.</p>                        
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h2 class="card-title">Myself</h2>
+                            <p class="card-text">I've got an <a href="{{ url_for('about_page') }}">About</a> page if you'd like a quick rundown on who I am, and be sure to check out my <a href="{{ url_for('blog_page') }}">Blog</a> to see the sort of things I'm into. For me, I find it a bit difficult to find the words in how to describe myself, and I really don't care to brag about myself. What I can say is that I do love having a conversation, so if you think I might be a good fit for your organization, how about we chat sometime?</p>                        
+                        </div>
+                    </div>                    
+                </div>
+            
+                <div class="col-lg-4">
+                    <div class="card mt-3 mx-auto" style="width: 18rem;">
+                        <div class="card-header">
+                            Some Links                
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><a target="_blank" href="https://www.linkedin.com/in/ethan-moss-0388aba3/" class="btn btn-primary"><span class="fa fa-linkedin"></span> My LinkedIn</a></p>
+                            <p class="card-text"><a target="_blank" href="https://github.com/EthanAMoss" class="btn btn-primary"><span class="fa fa-github"></span> My GitHub</a></p>
+                            <p class="card-text"><a target="_blank" href="https://www.dropbox.com/s/ekrcxj5550lc4xs/EthanMossResume.pdf?raw=1" class="btn btn-primary"><span class="fa fa-dropbox"></span> My Resume</a></p>
+                            <p class="card-text"><a href="{{ url_for('contact_page') }}" class="btn btn-primary"><span class="fa fa-envelope"></span> Contact Me</a></p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <br />
         </div>
+    {% endblock %}
+
+    {% block footer %}
+        {{ super() }}
     {% endblock %}
 
 {% endblock %}
