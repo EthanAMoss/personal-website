@@ -1,2 +1,2 @@
 # personal-website
-Currently in progress. Once done, it will be found at ethanandrewmoss.com!
+My very own website! Check it out at [ethanandrewmoss.com](http://ethanandrewmoss.com)
